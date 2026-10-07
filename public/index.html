@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armazém das Flores | Orquídeas, mudas e cestas</title>
+<meta name="description" content="Catálogo de orquídeas, mudas frutíferas, plantas ornamentais e cestas decoradas. Peça pelo WhatsApp.">
+<meta property="og:title" content="Armazém das Flores">
+<meta property="og:description" content="Orquídeas, mudas e cestas decoradas. Peça pelo WhatsApp.">
+<meta property="og:image" content="https://catalogo-armazem-das-flores-tajuba.netlify.app/img/orquidea.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ============ SITE PÚBLICO ============ -->
+<div id="site">
+  <header>
+    <div class="wrap">
+      <div class="logo" id="tLogo">Armazém das Flores</div>
+      <button class="btn-carrinho" onclick="abrirCarrinho()">🛒 Pedido<span class="badge" id="badge">0</span></button>
+    </div>
+  </header>
+
+  <div class="wrap banner" id="banner" hidden></div>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 id="tTitulo"></h1>
+      <p id="tSlogan"></p>
+      <div class="selos" id="selos"></div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="chips" id="chips"></div>
+    <div class="grade" id="grade"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="cols">
+        <div><h3 id="fNome"></h3><p id="fDoc"></p><p id="fEnd"></p></div>
+        <div><h3>Contato</h3><p id="fContato"></p><p id="fHorario"></p></div>
+        <div><h3>Onde estamos</h3><div id="fMapa"></div></div>
+      </div>
+      <a class="admin-link" href="/admin/" rel="nofollow" style="display:inline-block;color:inherit">Área do administrador</a>
+    </div>
+  </footer>
+
+  <a class="zap" id="zapBtn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+  </a>
+</div>
+
+<!-- Carrinho -->
+<div class="fundo" id="fundo" onclick="fecharCarrinho()"></div>
+<aside class="gaveta" id="gaveta">
+  <div class="topo"><h2>Seu pedido</h2><button class="fechar" onclick="fecharCarrinho()">×</button></div>
+  <div class="corpo" id="itens"></div>
+  <div class="pe">
+    <label for="entrega">Como prefere receber?</label>
+    <select id="entrega"><option>Retirar na loja</option><option>Entrega</option></select>
+    <div style="display:flex;justify-content:space-between;font-weight:700"><span>Total</span><span id="total">R$ 0,00</span></div>
+    <button class="btn" id="btnEnviar" onclick="enviarPedido()">Enviar pedido pelo WhatsApp</button>
+  </div>
+</aside>
+
+<!-- Ampliar foto -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('aberto')">
+  <button class="fechar">×</button><img id="lbImg" alt="">
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/js/core.js"></script>
+<script src="/js/site.js"></script>
+</body>
+</html>
