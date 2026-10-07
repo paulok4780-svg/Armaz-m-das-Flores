@@ -1,0 +1,13 @@
+{
+  "name": "armazem-das-flores",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx netlify-cli dev",
+    "env:admin": "npx netlify-cli env:import .env.admin"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
